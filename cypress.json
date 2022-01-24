@@ -1,0 +1,9 @@
+{
+    "baseUrl": "http://localhost:8081",
+    "pluginsFile": "tests/e2e/plugins/index.js",
+    "videoUploadOnPasses": false,
+    "screenshotOnRunFailure": false,
+    "video": true,
+    "chromeWebSecurity": false,
+    "experimentalRunEvents": true
+  }
