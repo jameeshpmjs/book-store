@@ -1,28 +1,44 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <div class="my-5 container">
+      <v-app-bar app fixed dense dark color="primary">
+        Book Store
+
+        <v-spacer />
+
+        <Cart />
+      </v-app-bar>
+
+      <v-main>
+        <transition :name="routeTransition">
+          <router-view />
+        </transition>
+      </v-main>
+    </div>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Cart from "./components/Cart.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: "App",
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: { Cart },
+
+  data: () => ({
+    routeTransition: null,
+  }),
+
+  watch: {
+    $route(to, from) {
+      const toDepth = to.path.split("/").length;
+      const fromDepth = from.path.split("/").length;
+      if (toDepth === fromDepth) this.routeTransition = "fade-transition";
+      else
+        this.routeTransition =
+          toDepth < fromDepth ? "slide-x-reverse-transition" : "slide-x-transition";
+    },
+  },
+};
+</script>
