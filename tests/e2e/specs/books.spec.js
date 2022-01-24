@@ -1,7 +1,7 @@
 describe("Home", () => {
   
 
-  it("Should display the main map", () => {
+  it("Should display the main page", () => {
     cy.visit("/")
 
     cy.get(".v-card").should('have.length', 5)
