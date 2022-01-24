@@ -62,7 +62,7 @@
 
             <v-divider />
 
-            <p class="text-right">Total: {{this.getArraySum(this.comboSum)}}</p>
+            <p class="text-right total">Total: {{this.getArraySum(this.comboSum)}}</p>
           </div>
 
           <span v-else align="end"> Cart is empty </span>
