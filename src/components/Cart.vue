@@ -138,7 +138,7 @@ export default {
       this.combos.forEach((combo) => {
         let actual = this.getArraySum(combo);
         let percentage = this.getOfferPercentage(combo.length);
-        let price = percentage === 0 ? actual : actual-  (actual * 1/percentage)
+        let price = percentage === 0 ? actual : actual-  (actual * percentage /100)
         let obj = { actual, percentage, price};
         combosum.push(obj);
       });
