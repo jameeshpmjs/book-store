@@ -24,7 +24,7 @@ describe("Home", () => {
     cy.get('.v-badge > .v-icon').click().then(()=> {
       cy.get(':nth-child(3) > .v-data-table__wrapper > table > tbody > :nth-child(1) > :nth-child(3)').should("contain", "25")
 
-      cy.get(".total").should("contain", "Total: 60")
+      cy.get(".total").should("contain", "Total: 51.6")
     })
   })
 
